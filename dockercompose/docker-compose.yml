@@ -1,56 +1,34 @@
-services:          # default syntax
-  frontendfirst:        # naming convention for container
-    build: /opt/Microservices/all microservices/season-switcher/ # location of the docker file
-    ports:     # port mapping my container to host port 
-      - '80:80'  
-    container_name: contfirst  # providing name to container
-    network_mode:   # providing network mode
-        bridge
+services:
+  todo:
+    build: /root/all microservices/todo6
+    ports:
+      - '80:80'
+    container_name: todo_apache
+    volumes:
+      - v1:/var/www/html/
+    network_mode: 
+      bridge
 
-  frontendsecond:
-    build: /opt/Microservices/all microservices/todo6/ # location of the docker file
-    ports:     # port mapping my container to host port 
+  traffic:
+    build: /root/all microservices/traffic-light/
+    ports:
       - '81:80'
-    container_name: contsecond  # providing name to container
-    network_mode:   
-        bridge
+    container_name: traffic_apache
+    volumes:
+      - v2:/var/www/html/
+    network_mode: 
+      bridge
 
-  frontendthird:
-    build: /opt/Microservices/all microservices/puppy/ # location of the docker file
-    ports:     
+  season:
+    build: /root/all microservices/season-switcher/
       - '82:80'
-    container_name: contthird  # providing name to container
-    network_mode:   
-        bridge
+    container_name: season_apache
+    volumes:
+      - v3:/var/www/html/
+    network_mode: 
+      bridge
 
-  frontendfourth:
-    build: /opt/Microservices/all microservices/traffic light/ # location of the docker file
-    ports:     
-      - '83:80'
-    container_name: contfourth  # providing name to container
-    network_mode:   
-        bridge
-
-  frontendfifth:
-    build: /opt/Microservices/all micrservices/number-addition/ # location of the docker file
-    ports:     
-      - '84:80'
-    container_name: contfifth  # providing name to container
-    network_mode:   
-        bridge
-
-  frontendsixth:
-    build: /opt/Microservices/all microservices/counter/ # location of the docker file
-    ports:     
-      - '85:80'
-    container_name: contsixth  # providing name to container
-    network_mode:   
-        bridge
-
-  frontendseventh:
-    build: /opt/Microservices/all microservices/Vr-website/ # location of the docker file
-    ports:     
-      - '86:80'
-    container_name: contseventh  # providing name to container
-    network_mode:   
-        bridge
+ volumes:
+  v1:
+  v2:
+  v3:

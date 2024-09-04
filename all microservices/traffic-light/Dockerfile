@@ -7,7 +7,7 @@ RUN apt-get update && \
     apt-get clean
 
 # Expose port 80 to the outside world
-EXPOSE 80
+EXPOSE 81
 
 # Copy the static ToDo app files to the Apache server directory
 COPY ./trafficlight/ /var/www/html/
