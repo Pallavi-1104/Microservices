@@ -12,7 +12,7 @@ services:
   traffic:
     build: ./traffic-light/
     ports:
-      - '80:80'
+      - '81:80'
     container_name: traffic_apache
     volumes:
       - myapp2: /var/www/html/
@@ -22,7 +22,7 @@ services:
   season:
     build: ./season-switcher/
     ports:
-      - '80:80'
+      - '82:80'
     container_name: season_apache
     volumes:
       - myapp3: /var/www/html/
