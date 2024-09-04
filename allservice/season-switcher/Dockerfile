@@ -7,7 +7,7 @@ RUN apt-get update && \
     apt-get clean
 
 # Expose port 80 to the outside world
-EXPOSE 82
+EXPOSE 80
 
 # Copy the static ToDo app files to the Apache server directory
 COPY ./season/ /var/www/html/
