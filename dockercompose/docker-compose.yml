@@ -28,7 +28,7 @@ services:
     network_mode: 
       bridge
 
- volumes:
+volumes:
   v1:
   v2:
   v3:
