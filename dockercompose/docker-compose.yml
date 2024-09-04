@@ -1,34 +1,34 @@
 services:
   todo:
-    build: /opt/Microservices/allservice/todo6/
+    build: ./todo6/
     ports:
-      - '80:80'
+      - '81:80'
     container_name: todo_apache
     volumes:
-      - v1:/var/www/html/
+      - myapp1:/var/www/html/
     network_mode: 
       bridge
 
   traffic:
-    build: /opt/Microservices/allservice/traffic-light/
+    build: ./traffic-light/
     ports:
-      - '81:80'
+      - '82:80'
     container_name: traffic_apache
     volumes:
-      - v2:/var/www/html/
+      - myapp2:/var/www/html/
     network_mode: 
       bridge
 
   season:
-    build: /opt/Microservices/allservice/season-switcher/
-      - '82:80'
+    build: ./season-switcher/
+      - '83:80'
     container_name: season_apache
     volumes:
-      - v3:/var/www/html/
+      - myapp3:/var/www/html/
     network_mode: 
       bridge
 
 volumes:
-  v1:
-  v2:
-  v3:
+  myapp1:
+  myapp2:
+  myapp3:
