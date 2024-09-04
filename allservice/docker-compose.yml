@@ -20,6 +20,5 @@ services:
        bridge
 
 volumes:
-  myapp1:
   myapp2:
   myapp3:
