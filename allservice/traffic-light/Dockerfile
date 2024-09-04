@@ -1,16 +1,9 @@
-# Use the official Ubuntu base image
 FROM ubuntu:latest
-
-# Update the package repository and install Apache
-RUN apt-get update && \
-    apt-get install -y apache2 && \
-    apt-get clean
-
-# Expose port 80 to the outside world
+LABEL microservicehost="traffic-light"
+RUN apt update
+RUN apt install nginx -y
+RUN rm -rf /var/www/html/index.html
+WORKDIR /var/www/html/
+COPY . .
 EXPOSE 80
-
-# Copy the static ToDo app files to the Apache server directory
-COPY ./traffic/ var/www/html/
-
-# Start Apache in the foreground
-CMD ["apache2ctl", "-D", "FOREGROUND"]
+CMD ["nginx", "-g", "daemon off;"]
