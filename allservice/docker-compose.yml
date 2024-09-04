@@ -21,6 +21,7 @@ services:
 
   season:
     build: ./season-switcher/
+    ports:
       - '80:80'
     container_name: season_apache
     volumes:
