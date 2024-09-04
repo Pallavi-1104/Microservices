@@ -1,6 +1,6 @@
 services:
   todo:
-    build: /root/Microservices/'all microservices'/todo6
+    build: /opt/Microservices/'all microservices'/todo6
     ports:
       - '80:80'
     container_name: todo_apache
@@ -10,7 +10,7 @@ services:
       bridge
 
   traffic:
-    build: /root/Microservices/'all microservices'/traffic-light
+    build: /opt/Microservices/'all microservices'/traffic-light
     ports:
       - '81:80'
     container_name: traffic_apache
@@ -20,7 +20,7 @@ services:
       bridge
 
   season:
-    build: /root/Microservices/'all microservices'/season-switcher/
+    build: /opt/Microservices/'all microservices'/season-switcher/
       - '82:80'
     container_name: season_apache
     volumes:
