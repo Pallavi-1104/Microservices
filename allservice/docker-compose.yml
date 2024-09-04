@@ -1,23 +1,23 @@
 services:
-  traffic:
-    build: ./traffic-light/
-    ports:
-      - '81:80'
-    container_name: traffic_apache
-    volumes:
-      - myapp2: /var/www/html/
-    network_mode: 
-        bridge
+  trafiic-light:
+       build: ./traffic-light/
+       ports:
+         - '88:80'
+       container_name: traffic
+       volumes: 
+        - myapp2:/var/www/html/
+       network_mode:
+          bridge
 
-  season:
-    build: ./season-switcher/
-    ports:
-      - '82:80'
-    container_name: season_apache
-    volumes:
-      - myapp3: /var/www/html/
-    network_mode: 
-       bridge
+  season-switcher:
+       build: ./season-switcher/
+       ports:
+         - '86:80'
+       container_name: season
+       volumes: 
+        - myapp3:/var/www/html/
+       network_mode:
+          bridge 
 
 volumes:
   myapp2:
