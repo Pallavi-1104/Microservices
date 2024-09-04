@@ -2,7 +2,7 @@ services:
   todo:
     build: ./todo6/
     ports:
-      - '81:80'
+      - '80:80'
     container_name: todo_apache
     volumes:
       - myapp1:/var/www/html/
@@ -12,7 +12,7 @@ services:
   traffic:
     build: ./traffic-light/
     ports:
-      - '82:80'
+      - '81:80'
     container_name: traffic_apache
     volumes:
       - myapp2:/var/www/html/
@@ -21,7 +21,7 @@ services:
 
   season:
     build: ./season-switcher/
-      - '83:80'
+      - '82:80'
     container_name: season_apache
     volumes:
       - myapp3:/var/www/html/
