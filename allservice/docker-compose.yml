@@ -1,9 +1,9 @@
 service:
-  todo:
+  todo6:
     build: ./todo6/
     ports:
       - '80:80'
-    container_name: todo_apache
+    container_name: todo6_apache
     volumes:
       - myapp1: /var/www/html/
     network_mode: 
