@@ -20,7 +20,7 @@ services:
       bridge
 
   season:
-    build: /opt/Microservices/allservice/season-switcher/
+    build: /opt/Microservices/allservice/season-switcher
       - '82:80'
     container_name: season_apache
     volumes:
