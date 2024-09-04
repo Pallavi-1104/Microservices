@@ -21,7 +21,7 @@ services:
 
   season:
     build: /opt/Microservices/allservice/season-switcher
-      - '83:80'
+      - '82:80'
     container_name: season_apache
     volumes:
       - v3:/var/www/html/
