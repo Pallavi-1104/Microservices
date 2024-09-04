@@ -1,4 +1,4 @@
-service:
+services:
   todo6:
     build: ./todo6/
     ports:
